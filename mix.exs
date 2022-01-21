@@ -46,6 +46,7 @@ defmodule Metis.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
+      {:ueberauth_github, "~> 0.7"},
 
       # Dev and Test dependencies
       {:credo, "~> 1.5.6", only: :dev},
