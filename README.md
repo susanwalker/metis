@@ -1,5 +1,9 @@
 # Metis
 
+[![Coverage Status](https://coveralls.io/repos/github/susanwalker/metis/badge.svg?branch=main)](https://coveralls.io/github/susanwalker/metis?branch=main)
+
+[![CI](https://github.com/susanwalker/metis/actions/workflows/ci.yml/badge.svg)](https://github.com/susanwalker/metis/actions/workflows/ci.yml)
+
 Greek goddess of "wisdom and cunning".
 https://en.wikipedia.org/wiki/Metis_(mythology)
 
