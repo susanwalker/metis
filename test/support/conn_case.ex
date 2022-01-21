@@ -23,6 +23,7 @@ defmodule MetisWeb.ConnCase do
       import Plug.Conn
       import Phoenix.ConnTest
       import MetisWeb.ConnCase
+      import MetisWeb.ConnHelpers
 
       alias MetisWeb.Router.Helpers, as: Routes
 
@@ -32,6 +33,10 @@ defmodule MetisWeb.ConnCase do
   end
 
   setup _tags do
-    {:ok, conn: Phoenix.ConnTest.build_conn()}
+    {
+      :ok,
+      conn_with_auth: MetisWeb.ConnHelpers.conn_with_auth(),
+      conn_without_auth: MetisWeb.ConnHelpers.conn_without_auth()
+    }
   end
 end
