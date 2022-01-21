@@ -19,6 +19,7 @@ defmodule Metis.MixProject do
         "coveralls.html": :test
       ],
       start_permanent: Mix.env() == :prod,
+      test_coverage: [tool: ExCoveralls],
       version: @version
     ]
   end
