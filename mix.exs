@@ -1,16 +1,25 @@
 defmodule Metis.MixProject do
   use Mix.Project
 
+  @version "0.1.0"
+  @elixir_version "~> 1.12"
+
   def project do
     [
-      app: :metis,
-      version: "0.1.0",
-      elixir: "~> 1.12",
-      elixirc_paths: elixirc_paths(Mix.env()),
-      compilers: [:gettext] ++ Mix.compilers(),
-      start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      app: :metis,
+      compilers: [:gettext] ++ Mix.compilers(),
+      deps: deps(),
+      elixir: @elixir_version,
+      elixirc_paths: elixirc_paths(Mix.env()),
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ],
+      start_permanent: Mix.env() == :prod,
+      version: @version
     ]
   end
 
@@ -26,17 +35,22 @@ defmodule Metis.MixProject do
 
   defp deps do
     [
-      {:phoenix, "~> 1.6.6"},
-      {:phoenix_html, "~> 3.0"},
-      {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.17.5"},
-      {:floki, ">= 0.30.0", only: :test},
+      # Prod dependencies
       {:esbuild, "~> 0.3", runtime: Mix.env() == :dev},
-      {:telemetry_metrics, "~> 0.6"},
-      {:telemetry_poller, "~> 1.0"},
       {:gettext, "~> 0.18"},
       {:jason, "~> 1.2"},
-      {:plug_cowboy, "~> 2.5"}
+      {:phoenix_html, "~> 3.0"},
+      {:phoenix_live_view, "~> 0.17.5"},
+      {:phoenix, "~> 1.6.6"},
+      {:plug_cowboy, "~> 2.5"},
+      {:telemetry_metrics, "~> 0.6"},
+      {:telemetry_poller, "~> 1.0"},
+
+      # Dev and Test dependencies
+      {:credo, "~> 1.5.6", only: :dev},
+      {:excoveralls, "~> 0.14.2", only: ~w[dev test]a},
+      {:phoenix_live_reload, "~> 1.2", only: :dev},
+      {:sobelow, "~> 0.8", only: :dev}
     ]
   end
 
