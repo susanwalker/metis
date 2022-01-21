@@ -5,8 +5,6 @@ defmodule MetisWeb.AuthController do
 
   plug @ueberauth_plug
 
-  alias Ueberauth.Strategy.Helpers
-
   def sign_in(conn, _params) do
     render(conn, "sign_in.html", conn: conn)
   end

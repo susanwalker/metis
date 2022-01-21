@@ -26,4 +26,7 @@ config :ueberauth, Ueberauth,
     github: {Ueberauth.Strategy.Github, []}
   ]
 
+config :metis,
+  ueberauth_plug: Ueberauth
+
 import_config "#{config_env()}.exs"
