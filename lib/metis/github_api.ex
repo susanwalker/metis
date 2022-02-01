@@ -9,7 +9,7 @@ defmodule Metis.GitHubAPI do
   def list_commits(owner, repo, auth_token \\ nil) do
     case do_list_commits(owner, repo, auth_token) do
       {200, commits, _response} -> {:ok, commits}
-      {status, error, _response} -> {:error, error}
+      {_status, error, _response} -> {:error, error}
     end
   end
 
