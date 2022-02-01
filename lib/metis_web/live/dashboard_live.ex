@@ -40,6 +40,7 @@ defmodule MetisWeb.DashboardLive do
           |> assign(:author_commits, %{})
           |> assign(:error, error)
           |> assign(:params, params)
+
         {:noreply, socket}
     end
   end
@@ -76,7 +77,7 @@ defmodule MetisWeb.DashboardLive do
       Date.diff(commit_date, date) <= 0
     end)
     |> Enum.group_by(fn commit -> {commit["author"]["login"], commit["author"]["avatar_url"]} end)
-    |> Enum.reject(fn {{author_name, _}, _} -> is_nil(author_name) or (author_name == "") end)
+    |> Enum.reject(fn {{author_name, _}, _} -> is_nil(author_name) or author_name == "" end)
     |> Enum.map(fn {author, author_commits} -> {author, length(author_commits)} end)
     |> Enum.sort_by(fn {_, length} -> length end, :desc)
   end
@@ -104,7 +105,7 @@ defmodule MetisWeb.DashboardLive do
     Metis.GitHubAPI.list_commits(owner, repo, pat)
   end
 
-  defp resolve_pat(pat), do: pat == "" && nil || pat
+  defp resolve_pat(pat), do: (pat == "" && nil) || pat
 
   defp date_from_commit(commit) do
     {:ok, datetime, _offset} = DateTime.from_iso8601(commit["commit"]["author"]["date"])
