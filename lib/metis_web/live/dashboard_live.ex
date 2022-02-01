@@ -1,4 +1,7 @@
 defmodule MetisWeb.DashboardLive do
+  @moduledoc """
+  LiveView module for root page
+  """
   use MetisWeb, :live_view
 
   @frequency 100
