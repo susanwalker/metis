@@ -52,6 +52,7 @@ defmodule Metis.MixProject do
       {:credo, "~> 1.5.6", only: :dev},
       {:excoveralls, "~> 0.14.2", only: ~w[dev test]a},
       {:exvcr, "~> 0.13.3", only: :test},
+      {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:sobelow, "~> 0.8", only: :dev}
     ]

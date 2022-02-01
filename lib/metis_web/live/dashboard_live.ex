@@ -104,8 +104,7 @@ defmodule MetisWeb.DashboardLive do
     Metis.GitHubAPI.list_commits(owner, repo, pat)
   end
 
-  defp resolve_pat(""), do: nil
-  defp resolve_pat(other), do: other
+  defp resolve_pat(pat), do: pat == "" && nil || pat
 
   defp date_from_commit(commit) do
     {:ok, datetime, _offset} = DateTime.from_iso8601(commit["commit"]["author"]["date"])
