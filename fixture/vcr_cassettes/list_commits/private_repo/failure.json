@@ -1,0 +1,42 @@
+[
+  {
+    "request": {
+      "body": "\"\\\"\\\"\"",
+      "headers": {
+        "User-agent": "tentacat"
+      },
+      "method": "get",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/susanwalker/pericles/commits"
+    },
+    "response": {
+      "binary": false,
+      "body": "{\"message\":\"Not Found\",\"documentation_url\":\"https://docs.github.com/rest/reference/repos#list-commits\"}",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Tue, 01 Feb 2022 00:46:12 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Used, X-RateLimit-Resource, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, X-GitHub-SSO, X-GitHub-Request-Id, Deprecation, Sunset",
+        "Access-Control-Allow-Origin": "*",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Frame-Options": "deny",
+        "X-Content-Type-Options": "nosniff",
+        "X-XSS-Protection": "0",
+        "Referrer-Policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+        "Content-Security-Policy": "default-src 'none'",
+        "Vary": "Accept-Encoding, Accept, X-Requested-With",
+        "X-RateLimit-Limit": "60",
+        "X-RateLimit-Remaining": "56",
+        "X-RateLimit-Reset": "1643679242",
+        "X-RateLimit-Resource": "core",
+        "X-RateLimit-Used": "4",
+        "Content-Length": "103",
+        "X-GitHub-Request-Id": "E1A2:014E:2B87DA8:71E170F:61F882D3"
+      },
+      "status_code": 404,
+      "type": "ok"
+    }
+  }
+]

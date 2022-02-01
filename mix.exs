@@ -46,10 +46,12 @@ defmodule Metis.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:telemetry_metrics, "~> 0.6"},
       {:telemetry_poller, "~> 1.0"},
+      {:tentacat, "~> 2.2.0"},
 
       # Dev and Test dependencies
       {:credo, "~> 1.5.6", only: :dev},
       {:excoveralls, "~> 0.14.2", only: ~w[dev test]a},
+      {:exvcr, "~> 0.13.3", only: :test},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
       {:sobelow, "~> 0.8", only: :dev}
     ]

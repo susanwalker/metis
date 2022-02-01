@@ -9,7 +9,7 @@ https://en.wikipedia.org/wiki/Metis_(mythology)
 
 ## User Stories
 
-* Signs-in via Github
+* Enter GitHub API token
 * Selects a repository (only owned or public)
 * Selects a date-range
 * Selects a type of animation
@@ -21,8 +21,6 @@ https://en.wikipedia.org/wiki/Metis_(mythology)
 * [X] create a new phoenix app w/o ECTO
 * [X] Set up CI
 * [X] Set up dev depencies
-* [ ] write an auth controller (via Github - uberauth)
-* [ ] index page (shell) - sign-out
 * [ ] consuming GitHub API
 * [ ] display Github data, as table
 * [ ] add filters to the table view(repo name, start date, end date)
