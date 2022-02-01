@@ -13,6 +13,6 @@ defmodule MetisWeb.Router do
   scope "/", MetisWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", DashboardLive
   end
 end

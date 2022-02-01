@@ -21,7 +21,7 @@ https://en.wikipedia.org/wiki/Metis_(mythology)
 * [X] create a new phoenix app w/o ECTO
 * [X] Set up CI
 * [X] Set up dev depencies
-* [ ] consuming GitHub API
+* [X] consuming GitHub API
 * [ ] display Github data, as table
 * [ ] add filters to the table view(repo name, start date, end date)
 * [ ] hook up live-view and auto-update current view

@@ -1,0 +1,65 @@
+<div id="githubForm">
+  <.form let={f} for={:fetch_commits} phx-submit="fetch_commits">
+    <div class="columns">
+      <div class="column is-one-third">
+        <%= label f, :owner, class: "label" %>
+        <div class="control">
+          <%= text_input f, :owner, class: "input", value: @params["owner"] %>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <%= label f, :repo, class: "label" %>
+        <div class="control">
+          <%= text_input f, :repo, class: "input", value: @params["repo"] %>
+        </div>
+      </div>
+      <div class="column is-one-third">
+        <%= label f, :personal_access_token, "Personal Access Token (for private repos)", class: "label" %>
+        <div class="control">
+          <%= password_input f, :personal_access_token, class: "input", value: @params["personal_access_token"] %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control">
+      <%= submit "Visualize!", class: "button is-info" %>
+    </div>
+  </.form>
+</div>
+
+<hr />
+
+<%= unless is_nil(@error) do %>
+  Error in fetching commits: <%= @error["message"] %>
+  <br />
+<% end %>
+
+<%= if Enum.empty?(@author_commits) do %>
+  No commits to display. Please select or change your filters
+<% else %>
+  <div id="visualization">
+    <div id="date" style="text-align: center">
+      <strong>Date: <%= @date %></strong>
+      <%= if @ended do %>
+        <i>Ended</i>
+      <% end %>
+    </div>
+    <br /><br />
+    <%= for {{author_name, avatar_url}, count} <- @author_commits do %>
+      <div class="columns">
+        <div class="column is-one-fifth">
+          <div class="level">
+            <figure class="image is-32x32">
+              <img class="is-rounded" src={ avatar_url }>
+            </figure>
+            (<%= author_name %>) <%= count %>
+          </div>
+        </div>
+
+        <div class="column is-four-fifths">
+          <progress class="progress is-large" value={ count } max={ @max_commits }>80%</progress><br />
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% end %>
