@@ -21,12 +21,4 @@ config :logger, :console,
 
 config :phoenix, :json_library, Jason
 
-config :ueberauth, Ueberauth,
-  providers: [
-    github: {Ueberauth.Strategy.Github, []}
-  ]
-
-config :metis,
-  ueberauth_plug: Ueberauth
-
 import_config "#{config_env()}.exs"

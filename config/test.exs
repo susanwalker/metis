@@ -8,10 +8,3 @@ config :metis, MetisWeb.Endpoint,
 config :logger, level: :warn
 
 config :phoenix, :plug_init_mode, :runtime
-
-config :metis,
-  ueberauth_plug: MetisWeb.Test.Ueberauth
-
-config :ueberauth, Ueberauth.Strategy.Github.OAuth,
-  client_id: "TEST_CLIENT_ID",
-  client_secret: "TEST_CLIENT_SECRET"
