@@ -22,7 +22,7 @@ https://en.wikipedia.org/wiki/Metis_(mythology)
 * [X] Set up CI
 * [X] Set up dev depencies
 * [X] consuming GitHub API
-* [ ] display Github data, as table
+* [X] display Github data, as table
+* [X] hook up live-view and auto-update current view
 * [ ] add filters to the table view(repo name, start date, end date)
-* [ ] hook up live-view and auto-update current view
 * [ ] present the data differently (animations) using HTML
