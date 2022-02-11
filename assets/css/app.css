@@ -118,3 +118,15 @@
   0% { opacity: 1; }
   100% { opacity: 0; }
 }
+
+.container{
+  color: white;
+}
+
+.label{
+  color: white;
+}
+
+strong{
+  color: white;
+}
